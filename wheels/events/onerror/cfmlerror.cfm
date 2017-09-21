@@ -38,7 +38,7 @@
 		<p><strong>Referrer:</strong><br>#cgi.http_referer#</p>
 	</cfif>
 	<p><strong>Method:</strong><br>#cgi.request_method#</p>
-	<p><strong>IP Address:</strong><br>#cgi.remote_addr#</p>
+	<p><strong>IP Address:</strong><br><cfif Len(cgi.http_x_forwarded_for)>#cgi.http_x_forwarded_for#<cfelse>#cgi.remote_addr#</cfif></p>
 	<cfif IsDefined("application.wheels.hostName")>
 		<p><strong>Host Name:</strong><br>#application.wheels.hostName#</p>
 	</cfif>
